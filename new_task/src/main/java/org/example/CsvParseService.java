@@ -22,6 +22,13 @@ public class CsvParseService {
         }
     }
 
+    /**
+     * Метод считывает данные из файлов CSV и преобразует их в список объектов Product.
+     * @param path путь к директории с файлами CSV, из которых необходимо считать данные
+     * @return список List объектов Product
+     * @throws FileNotFoundException если по переданному пути не найдена директория,
+     * эта директория пуста либо не содержит файлов CSV
+     */
     public CsvParseService parseCsvToList(@NonNull String path) throws FileNotFoundException {
         checkIsDirectoryExist(path);
 
@@ -42,6 +49,12 @@ public class CsvParseService {
         return this;
     }
 
+    /**
+     * Метод записывает данные из переданной Map в файл формата CSV, создаваемый в директории по указанному пути
+     * @param path путь к директории, в которой будет создан файл
+     * @param productMap подготовленная Map, с где ключ - название магазина, а значение - список продуктов
+     * @throws FileNotFoundException если по переданному пути не найдена директория для создания в ней файла
+     */
     public void writeMapToCsv(@NonNull String path, Map<String, List<Product>> productMap) throws FileNotFoundException {
         checkIsDirectoryExist(path);
 

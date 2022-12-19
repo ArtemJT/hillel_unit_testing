@@ -21,6 +21,6 @@ class CsvParseServiceTest {
 
     @Test
     void testGettingListFromCsvFile() throws FileNotFoundException {
-        assertEquals(TEST_LIST.getList(), csvParseService.parseCsvToList("src/test/java/resources").getProductList());
+        assertEquals(TEST_LIST.getList(), csvParseService.parseCsvToList("src/test/java/test_resources").getProductList());
     }
 }

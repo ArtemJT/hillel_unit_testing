@@ -15,7 +15,7 @@ class ProductListMapperTest {
 
     @Test
     void testMappingList() {
-        Map<String, List<Product>> productMap = productListMapper.mapList(TEST_LIST.getList()).getProductMap();
+        Map<String, List<Product>> productMap = productListMapper.mapList(TEST_LIST.getList());
         assertEquals(TEST_MAP.getMap(), productMap);
     }
 }

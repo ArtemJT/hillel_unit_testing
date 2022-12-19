@@ -14,10 +14,15 @@ public class ProductListMapper {
 
     private Map<String, List<Product>> productMap;
 
-    public ProductListMapper mapList(List<Product> productList) {
+    /**
+     * Метод преобразует передаваемый список List объектов Product в Map.
+     * @param productList список List объектов Product
+     * @return Map, с где ключ - название магазина, а значение - список List объектов Product
+     */
+    public Map<String, List<Product>> mapList(List<Product> productList) {
         setProductMapByList(productList);
         mergeStoreProducts();
-        return this;
+        return productMap;
     }
 
     private void mergeStoreProducts() {

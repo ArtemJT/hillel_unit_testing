@@ -14,7 +14,7 @@ public class Main {
         try {
             List<Product> objectList = csvParseService.parseCsvToList(readPath).getProductList();
 
-            Map<String, List<Product>> productMap = new ProductListMapper().mapList(Objects.requireNonNull(objectList)).getProductMap();
+            Map<String, List<Product>> productMap = new ProductListMapper().mapList(Objects.requireNonNull(objectList));
 
             csvParseService.writeMapToCsv(writePath, productMap);
         } catch (FileNotFoundException e) {
