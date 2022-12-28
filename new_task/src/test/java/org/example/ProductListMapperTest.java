@@ -1,6 +1,7 @@
 package org.example;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import java.util.List;
 import java.util.Map;
@@ -11,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ProductListMapperTest {
 
-    private final ProductListMapper productListMapper = new ProductListMapper();
+    private final ProductListMapper productListMapper = Mockito.spy(ProductListMapper.class);
 
     @Test
     void testMappingList() {

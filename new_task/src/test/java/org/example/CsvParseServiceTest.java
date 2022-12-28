@@ -1,6 +1,7 @@
 package org.example;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import java.io.FileNotFoundException;
 
@@ -11,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CsvParseServiceTest {
 
-    private final CsvParseService csvParseService = new CsvParseService();
+    private final CsvParseService csvParseService = Mockito.spy(CsvParseService.class);
 
     @Test
     void testWrongDirectoryPath() {
